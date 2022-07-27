@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="ngunnawal.db " uuid="5d5fae1c-7376-4acb-9765-5e9a914ccafc">
+    <data-source source="LOCAL" name="ngunnawal.db" uuid="a49dbced-e3de-464c-934c-b0e98841e699">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\school and work\school work\web design\pycharm\pycharm</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\micha\school and work\school work\web design\pycharm-flaskProject\database\database</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
