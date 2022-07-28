@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/static/ngunnawal.css">
+
+    {% block pageStyle %}
+{% endblock %}
+
 </head>
 <body>
 <div class="grid-container"> <!-- overall layout -->
     <div class="full-width text-highlighting">
-    <h1 style="...">{{ title }} </h1>
+    <h1 style="..."> {{ title }} </h1>
     </div>
     <div class="double-height">
 {% block cellContent1 %} {% endblock %}
