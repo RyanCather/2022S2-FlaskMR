@@ -1,3 +1,5 @@
+import self as self
+
 from app import db
 from datetime import datetime
 
@@ -21,4 +23,4 @@ class Contact(db.Model):
 
 
 def todo():
-    return None
+    return todo()
