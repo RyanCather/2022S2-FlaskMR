@@ -20,7 +20,3 @@ class Contact(db.Model):
             id = db.Column(db.Integer, primary_key=True, autoincrement=True)
             text = db.Column(db.Text)
             done = db.Column(db.Boolean)
-
-
-def todo():
-    return todo()
