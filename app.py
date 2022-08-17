@@ -23,7 +23,17 @@ def contact():
         db.session.commit()
     return render_template("contact.html", title ="Contact Us", form=form)
 
-
+@app.route('/todo', methods=["POST", "GET"])
+def view_todo():
+    all_todo = db.session.query(todo).all()
+    if request.method == "POST":
+        new_todo = todo(text=request.form['text'])
+        new_todo.done = False
+        db.session.add(new_todo)
+        db.session.commit()
+        db.session.refresh(new_todo)
+        return redirect("/todo")
+    return render_template("todo.html", todos=all_todo)
 
 @app.route("/todoedit/<todo_id>", methods=["POST", "GET"])
 def edit_note(todo_id):
