@@ -1,0 +1,26 @@
+{% extends 'template.html' %}
+
+{# Place the content for the cellContent1 in this block #}
+{% block cellContent1 %}
+    Sidebar
+{% endblock %}
+
+{# Place the content for the cellContent2 in this block #}
+{% block cellContent2 %}
+<div class="container-fluid">
+    {% for message in messages %}
+        <div class="row">
+        <div class="col-3"> {{ message.name }}</div>
+            <div class="col-3"> {{ message.email }}</div>
+            <div class="col-3"> {{ message.message }}</div>
+            <div class="col-3"> {{ message.dateSubmitted.strftime('%H:%M - %d/%m/%Y') }} </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
+Welcome {{ user.name }}!
+
+{# Place the content for the cellContent3 in this block #}
+{% block cellContent3 %}
+    Footer
+{% endblock %}

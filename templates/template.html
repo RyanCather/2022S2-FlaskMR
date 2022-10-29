@@ -19,7 +19,15 @@
     <div class="double-height">
 {% block cellContent1 %} {% endblock %}
     </div>
-
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class="flashes">
+            {% for message in messages %}
+                <li><div class="focus">{{ message }}</div></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
  <div>
 {% block cellContent2 %} {% endblock %}
     </div>
@@ -39,6 +47,38 @@
 
         <!-- This is the navbar -->
 
+         <!-- This is the navbar links -->
+<div class="collapse navbar-collapse" id="navbarNav">
+
+    <ul class="navbar-nav"> <li class="nav-item">
+    <a class="nav-link" href="/">Home</a>
+</li>
+    <li class="nav-item"> <a class="nav-link" href="history.html">History</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="gallery.html">Gallery</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="contact.html">Contact Us</a>
+</li>
+{% if user.is_anonymous %}
+<li class="nav-item">
+    <a class="nav-link" href="/login">Login</a>
+</li>
+{% else %}
+<li class="nav-item">
+    <a class="nav-link" href="/Logout">Logout</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="/reset_pasword">Reset Password</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="/profile">Profile</a>
+</li>
+{% endif %}
+</UL>
+
+</div>
 
         <div class="navbar">
 
@@ -63,6 +103,7 @@
             <a href="profile.html">profile</a>
             <a href="search.html">search</a>
             <a href="todo.html">todo</a>
+             <a href="register">User Registration</a>
 
         </div>
     </div>

@@ -1,0 +1,42 @@
+<p>
+    {{ form.password_confirm.label }}<br>
+    {{ form.password_confirm(size=32) }}<br>
+    {% for error in form.password_confirm.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+</p>
+
+
+
+
+{% block cellContent2 %}
+
+<form action="" method="post">
+
+11 form.hidden_tag() }}
+
+<p>
+
+{{ form.email.address.label }}<br>
+
+ff form.email address (size=64) }}<br> {% for error in form.email.address.errors %}
+
+<span style="...">[{{ error }}}</span> {% endfor %}
+
+</p>
+
+<p>
+
+{{ form.password. label }}<br>
+
+{{ form.password (size=32) }}<br> {% for error in form.password.errors %} <span style="...">[{{ error }}]</span>
+
+{% endfor %}
+
+</p>
+
+<p>{{ form.submit() }}</p>
+
+</form>
+
+{% endblock %}
