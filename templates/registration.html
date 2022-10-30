@@ -8,13 +8,6 @@
 
 {# Place the content for the cellContent2 in this block #}
 {% block cellContent2 %}
-    Main Content
-{% endblock %}
-
-{# Place the content for the cellContent3 in this block #}
-{% block cellContent3 %}
-    Footer
-{% endblock %}
 
 <form action="" method="post">
   {{ form.hidden_tag() }}
@@ -56,3 +49,9 @@
     </p>
     <p>{{ form.submit() }}</p>
 </form>
+{% endblock %}
+
+{# Place the content for the cellContent3 in this block #}
+{% block cellContent3 %}
+    Footer
+{% endblock %}
