@@ -64,7 +64,7 @@ def register():
     form = RegistrationForm()
     if form.validate_on_submit():
         new_user = User(email_address=form.email_address.data, name=form.name.data,
-                             user_level=1)  # defaults to regular user
+                        user_level=1)  # defaults to regular user
         new_user.set_password(form.password.data)
         db.session.add(new_user)
         db.session.commit()
