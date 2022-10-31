@@ -22,15 +22,15 @@ class todo(db.Model):
     text = db.Column(db.Text)
     done = db.Column(db.Boolean)
 
-    class User(UserMixin, db.Model):
-        id = db.Column(db.Integer, primary_key=True)
-        email_address = db.Column(db.String(255), unique=True)
-        name = db.Column(db.String(255))
-        password_hash = db.Column(db.String(255))
-        user_level = db.Column(db.Integer)
+class User(UserMixin, db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    email_address = db.Column(db.String(255), unique=True)
+    name = db.Column(db.String(255))
+    password_hash = db.Column(db.String(255))
+    user_level = db.Column(db.Integer)
 
-        def set_password(self, password):
-            self.password_hash = generate_password_hash(password)
+    def set_password(self, password):
+        self.password_hash = generate_password_hash(password)
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
@@ -45,6 +45,6 @@ class todo(db.Model):
         else:
             return False
 
-        @login.user_loader
-        def load_user(id):
-            return UserMixin.query.get(int(id))
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id))
