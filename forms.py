@@ -1,7 +1,8 @@
 from flask_wtf import FlaskForm
 from wtforms.validators import DataRequired, Email, ValidationError, EqualTo
 from wtforms import StringField, SubmitField, IntegerField, PasswordField
-from models import UserMixin
+from models import User
+
 class ContactForm (FlaskForm):
     name = StringField("name", validators=[DataRequired()])
     email = StringField("email", validators=[DataRequired(), Email()])
@@ -16,7 +17,7 @@ class RegistrationForm(FlaskForm):
     submit = SubmitField("Register")
 
     def validate_email_address(self, email_address_to_register):
-        user = UserMixin.query.filter_by(email_address=email_address_to_register.data).first()
+        user = User.query.filter_by(email_address=email_address_to_register.data).first()
         if user is not None:
             raise ValidationError("Please Use a Different Email Address)")
 
